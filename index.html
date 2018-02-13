@@ -7,14 +7,36 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
 
+    <!-- External CSS Stylesheet
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+     -->
     <title>Dashboard Main Page</title>
+    
+    <!-- Styles for formatting -->
+    <style>
+      #container {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 10px;
+        width: 800px;
+        height: 800px;
+        background-color: #fff;
+        }
+
+      #canvasDiv {
+        border-right: 1px solid #dee2e6;
+        }
+    </style>
   </head>
   <body>
     <!--Nav Bar-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#">
+            <img src="Nielsen-logo.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+            NIELSEN Hotel Engagement Dashboard
+        </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -25,7 +47,7 @@
                   <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
+                  <a class="nav-link" href="#">Preferences</a>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -63,7 +85,17 @@
             </li>
           </ul>
     <!-- A canvas for the chart -->
-      <canvas id="myChart"></canvas>
+    <div class = "container-fluid">
+      <div class = "row">
+        <div class = "col-8" id = "canvasDiv">
+          <canvas id="myChart"></canvas>
+        </div>
+        <!-- A container for the drill in side-bar -->
+        <div class = "col">
+          <h2 style = "text-align: center">Drill-In Container</h2>
+        </div>
+      </div>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS, then charts.js -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -72,7 +104,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
   </body>
   <script>
-    document.getElementById('myChart').style.maxWidth = "800px";
+    //Get Data from JSON
+    var database; //Global variable for to which sales data will be added
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            database = JSON.parse(this.responseText); //Bring in JSON data
+            console.log(database);
+        }
+    };
+    xmlhttp.open("GET", "http://marcatfacts-env.k32pjagygc.us-west-1.elasticbeanstalk.com/facts", true);
+    xmlhttp.send();
+
+    //Setup chart
     var ctx = document.getElementById('myChart').getContext('2d');
     var chart = new Chart(ctx, {
     // The type of chart we want to create

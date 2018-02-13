@@ -1,0 +1,74 @@
+{
+                "node1": {
+                    "properties": {
+                        "linkedTo": 0,
+                        "position": "none",
+                        "x": 0,
+                        "y": 0,
+                        "titleString": "Total $ Sales",
+                        "absoluteChange": "$124,783,281",
+                        "percentChange": "-0.3%",
+                        "impactValue": "$ Sales Chg YA : -$396,939" 
+                    }
+                },
+                "node21": {
+                    "properties": {
+                        "linkedTo": "node1",
+                        "position": "left",
+                        "x": 0,
+                        "y": 0,
+                        "titleString": "Visits",
+                        "absoluteChange": "57,799,700",
+                        "percentChange": "-4.6%",
+                        "impactValue": "$ Impact: -$5,890,119" 
+                    }
+                },
+                "node22": {
+                    "properties": {
+                        "linkedTo": "node1",
+                        "position": "right",
+                        "x": 0,
+                        "y": 0,
+                        "titleString": "Spend per Visit",
+                        "absoluteChange": "$2.16",
+                        "percentChange": "4.5%",
+                        "impactValue": "$ Impact: $5,493,719" 
+                    }
+                },
+                "node31": {
+                    "properties": {
+                        "linkedTo": "node21",
+                        "position": "left",
+                        "x": 0,
+                        "y": 0,
+                        "titleString": "Units per Visit",
+                        "absoluteChange": "1.7",
+                        "percentChange": "5.3%",
+                        "impactValue": "$ Impact: $6,567,767" 
+                    }
+                },
+                "node32":{
+                    "properties": {
+                        "linkedTo": "node21",
+                        "position": "right",
+                        "x": 0,
+                        "y": 0,
+                        "titleString": "Average Unit Price ($)",
+                        "absoluteChange": "$1.27",
+                        "percentChange": "-0.8%",
+                        "impactValue": "$ Impact: -$1,074,106" 
+                    }
+                },
+                "node4":{
+                    "properties": {
+                        "linkedTo": "node31",
+                        "position": "none",
+                        "x": 0,
+                        "y": 0,
+                        "titleString": "Average Unit Price ($)",
+                        "absoluteChange": "$1.27",
+                        "percentChange": "-0.8%",
+                        "impactValue": "$ Impact: -$1,074,106" 
+                    }
+                }
+            }
