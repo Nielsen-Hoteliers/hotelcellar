@@ -97,42 +97,24 @@
     <!-- Page Tabs -->
     <ul class="nav nav-tabs">
             <li class="nav-item">
-              <a class="nav-link active" href="#">Visitor Numbers</a>
+              <a class="nav-link" href="index.html">Visitor Numbers</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="quadrant_data.html">Lobby Breakdown</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="point_of_sale.html">Point of Sale</a>
+              <a class="nav-link active" href="#">Point of Sale</a>
             </li>
           </ul>
     <!-- A canvas for the chart -->
     <div class = "container-fluid">
       <div class = "row">
-        <div class = "col-8" id = "graphContainer">
-            <script type='text/javascript' src='https://us-west-2b.online.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 900px; height: 523px;'><object class='tableauViz' width='900' height='523' style='display:none;'><param name='host_url' value='https%3A%2F%2Fus-west-2b.online.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;hotelengagementdashboard' /><param name='name' value='FIREFLY_tableau_visualizations&#47;TotalPeopleHr' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
+        <div class = "col-8">
+            something here
         </div>
         <!-- A container for the drill in side-bar -->
         <div class = "col">
           <h2 style = "text-align: center">Drill-In Container</h2>
-          <br>
-          <div class="btn-group btn-group-toggle" data-toggle="buttons">
-            <label class="btn btn-secondary active">
-              <input type="radio" name="options" id="option1" autocomplete="off" checked> LOBBY
-            </label>
-            <label class="btn btn-secondary" onclick= 'showQuadOneGraph()'>
-              <input type="radio" name="options" id="option2" autocomplete="off"> BAR
-            </label>
-            <label class="btn btn-secondary">
-              <input type="radio" name="options" id="option3" autocomplete="off"> LOUNGE
-            </label>
-            <label class="btn btn-secondary">
-              <input type="radio" name="options" id="option4" autocomplete="off"> DESK
-            </label>
-            <label class="btn btn-secondary">
-              <input type="radio" name="options" id="option5" autocomplete="off"> COMPUTER
-            </label>
-          </div>
         </div>
       </div>
     </div>
@@ -145,14 +127,5 @@
   </body>
   <script>
     //Put function and additional javascript here
-    function showQuadOneGraph(){
-        document.getElementById("graphContainer").innerHTML = 'some text';
-    }
-    function showQuadTwoGraph(){
-        document.getElementById("graphContainer").innerHTML = 'some text';
-    }
-    function showQuadTwoGraph(){
-        document.getElementById("graphContainer").innerHTML = 'some text';
-    }
   </script>
 </html>
